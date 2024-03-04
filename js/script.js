@@ -15,6 +15,8 @@ const images = [
   './consegna/img/05.webp',
 ];
 // 2
+
+
 for(let i = 0; i < images.length; i++){
   const img = images[i];
   itemsSlide.innerHTML += `<img class="img hide" src="${img}"> `
@@ -68,3 +70,8 @@ botton.addEventListener('click', function (){
     botton.classList.add('hide')
   }
   })
+
+  setInterval(function() {
+
+    botton.click();
+  }, 3000);
