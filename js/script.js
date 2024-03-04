@@ -71,7 +71,15 @@ botton.addEventListener('click', function (){
   }
   })
 
-  setInterval(function() {
 
-    botton.click();
+  let counter = 0;
+
+  const loop = setInterval(function() {
+    if (counter < 5) {
+      botton.click();
+      counter++
+    }else{
+      clearInterval(loop)
+    }
+
   }, 3000);
