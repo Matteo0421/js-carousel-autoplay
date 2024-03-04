@@ -40,13 +40,10 @@ previwCollection[counterImg].classList.remove('active');
 
 counterImg--;
 
-previwCollection[counterImg].classList.add('active');
-
-
-if (counterImg === 0){
-  sopra.classList.add('hide')
+if (counterImg < 0) {
+  counterImg = images.length - 1;
 }
-
+previwCollection[counterImg].classList.add('active');
 itemsCollection[counterImg].classList.remove('hide');
 
 })
@@ -62,24 +59,16 @@ botton.addEventListener('click', function (){
 
   counterImg++;
 
-  previwCollection[counterImg].classList.add('active');
-  
-  itemsCollection[counterImg].classList.remove('hide');
-  
-  if (counterImg === images.length - 1){
-    botton.classList.add('hide')
+  if (counterImg >= images.length) {
+    counterImg = 0;
   }
+  previwCollection[counterImg].classList.add('active');
+  itemsCollection[counterImg].classList.remove('hide');
   })
 
 
-  let counter = 0;
 
   const loop = setInterval(function() {
-    if (counter < 5) {
-      botton.click();
-      counter++
-    }else{
-      clearInterval(loop)
-    }
+    botton.click();
 
   }, 3000);
